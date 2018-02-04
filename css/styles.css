@@ -1,6 +1,6 @@
 body{
-    background-color:black;
-    color:white;
+    background-color:white;
+    color:black;
 }
 
 header, main, nav, footer, #content{
@@ -12,11 +12,11 @@ nav a{
     padding-bottom:4px;
     font-size:1.8em;
     text-decoration:none;
-    color:white;
+    color:black;
 }
 
 nav a:hover{
-    border-bottom:2px orange solid;
+    border-bottom:2px  #00cc00 solid;
     font-size:2em;
     transition:.9s;
 }
@@ -27,14 +27,17 @@ figure{
 
 #me, #welcomeText{
     float:left;
+    padding-bottom: 80px;
 }
 
 #welcomeText{
     text-align: left;
+    padding-left: 50px;
+    font-size:1.3em;
 }
 
 #standOut{
-    color:orange;
+    color: #00cc00;
 }
 
 footer{
@@ -43,33 +46,58 @@ footer{
     clear:both;
 }
 
+#footerImg{
+    width: 90px;
+    height: 50px;
+}
+
 table{
     margin:0px auto;
+    padding-top:50px;
 } 
 
 td{
-    padding-right: 10px;
-    font-size:1.3em;
+    padding-right: 20px;
+    font-size:1.7em;
 }
 
 td strong{
-  color:orange;  
+  color:#00cc00;  
 }
 
 #table-header{
-    background-color: #341a00;
+    background-color: black;
 }
 
 .table-row{
-    background-color: #753900;
+    background-color: #b3ffb3;
 }
-
 
 ul{
     text-align:left;
-    padding-left: 200px;
+    padding-left: 50px;
+    font-size:1.3em;
+    padding-bottom: 40px;
 }
 
 .hobby{
-    color: yellow;
+    color: #00cc00;
+}
+
+#photo{
+    width:300px;
+    height: 300px;
+}
+
+iframe{
+    padding-top:50px;
+    padding-bottom: 50px;
+    width: 1000px;
+    height: 1200px; 
+}
+
+h1{
+    font-family: 'Lobster', cursive;
+    font-size: 4em;
+    margin-bottom: 0px;
 }

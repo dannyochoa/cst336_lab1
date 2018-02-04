@@ -13,7 +13,7 @@ in html
 <!-- All styles and javascript go inside the head -->
     <head>
         <meta charset = "utf-8"/>
-        <title>Daniel Ochoa: Personal Website</title>
+        <title>Daniel Ochoa Aguila: Personal Website</title>
     </head>
 <!-- closing head -->
 
@@ -21,12 +21,13 @@ in html
     <!-- This is where we place the content of our website -->
     <body>
         <header>
-            <h1> Daniel Ochoa </h1>
+            <h1> Daniel Ochoa Aguila</h1>
             <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+            <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
         </header>
         <nav>
             <hr width = "50%" />
-            <a href = "index.html" id = "standOut">Home</a>
+            <a href = "index.php" id = "standOut">Home</a>
             <a href = "about.html">About</a>
             <a href = "contact.html">Contact</a>
         </nav>
@@ -36,30 +37,37 @@ in html
         
         <main>
             <figure id ="me">
-                <img src="img/juan_doe.png"/>
+                <img id = "photo" src="img/me.jpg"/>
             </figure>
             <div id="welcomeText">
+                <br/><br/><br/>
                 Hello!<br/>
                 <p>
-                    Thank you for visiting my professional profile!
+                    Thank you for taking the time to look over my page.
                 </p>
                 <p>
-                    I have just been hired by Apple
+                    I am 20 years old, part of the CS in 3 program. I will be <br/>
+                    getting my bachelor degree in 
+                    Computer Science in May 2019. 
                 </p>
                 <p>
-                    Feel free to contact me
+                    Feel free to contact me: <br/>
+                    <strong>Email: </strong> dochoa-aguila@csumb.edu<br/>
+                    <strong>Phone: </strong> (831) 770-9090
+                    
                 </p>
                 <br/><br/>
-                <em>"with ordinaty talent and extrodinary......</em>
+                <em>“A dog will flatter you but you have to flatter the cat.”</em> - George Mikes 
             </div>
         </main>
         <footer>
             <hr>
-            course name. 2018<br/>
-            <img src ="img/csumb.jpg"/>
+            CST336 Internet Programming. 2017 &#xa9; Ochoa Aguila<br/>
+            <strong>Disclaimer: </strong>The information in this webpage is fictitous.<br/>
+            It is used for academic purposes only.<br/>
+            <img id = "footerImg" src ="img/csumb.jpg"/>
             
         </footer>
-        <!-- closing footer -->
         
     </body>
     <!-- closing body -->
