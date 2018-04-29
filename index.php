@@ -22,27 +22,31 @@
                 var isPass= false;
                 $("#zipCode").change(function(){
                     // alert($("#zipCode").val());
-                    
                     $.ajax({
                     type: "GET",
                     url: "http://itcdland.csumb.edu/~milara/ajax/cityInfoByZip.php",
                     dataType: "json",
                     data: { "zip": $("#zipCode").val() },
                     success: function(data,status) {
-                    $("#city").html(data.city);
-                    $("#latitude").html(data.latitude);
-                    $("#longitude").html(data.longitude);
-                    // alert(data.city);
+                        if(data == false){
+                            $("#zipNotFound").html("Zip code not found");
+                        }
+                        else{
+                            $("#zipNotFound").hide();
+                            $("#city").html(data.city);
+                            $("#latitude").html(data.latitude);
+                            $("#longitude").html(data.longitude);
+                        }
+                    
                     
                     },
                     complete: function(data,status) { //optional, used for debugging purposes
                     //alert(status);
-                    $("#zipNotFound").html("<p>Zip code not found");
-                    
                     }
                     
                     });//ajax
-                    
+                    // alert ($("#city").val());
+                   
                 }); // $("#zipCode").change
                 
                 $("select").change(function(){
@@ -74,13 +78,13 @@
                     
                     $.ajax({
                     type: "GET",
-                    url: "inc/checkUsername.php",
+                    url: "checkUsername.php",
                     dataType: "json",
                     data: { "username": $("#username").val() },
                     success: function(data,status) {
                         if(!data){
                             // $("#username").html("<h3>Username is taken</h3>");
-                            $("#isthere").hide();
+                             $("#isthere").html("<h4 style = 'color: green;'>Username is avilable </h4>");
                             isUser = true;
                         }
                         else{
@@ -102,8 +106,9 @@
                     
                 });//change
                 
-                $("#p2").change(function(){
-
+                
+                
+                $("#sub").click(function(){
                     if($("#p2").val() != $("#p1").val()){
                         isPass = false;
                         $("#wrongpass").html("<h4 style = 'color: red;'>Passwords do not match </h4>");
@@ -113,17 +118,17 @@
                         isPass = true;
                         $("#wrongpass").hide();
                     }
-                })
+            
                 
-                
-                $("#sub").click(function(){
+                    
+                    
                     if(!isPass || !isUser){
                         $("#success").html("<h3 style = 'color: red;'>Error - Cannot sign up </h3>");
                         
                     } else{
                         $.ajax({
                             type: "POST",
-                            url: "inc/insertUser.php",
+                            url: "insertUser.php",
                             dataType: "json",
                             data: { "username": $("#username").val(),
                                     "firstName": $("#firstName").val(),
@@ -160,8 +165,8 @@
                 First Name:  <input id = "firstName" type="text"><br> 
                 Last Name:   <input id = "lastName" type="text"><br> 
                 Email:       <input id = "email" type="text"><br> 
-                Phone Number:<input id = "number" type="text"><br><br>
-                Zip Code:    <input id="zipCode" type="text"> <span id="zipNotFound"></span>
+                Phone Number:<input id = "number" type="text"><br>
+                Zip Code:    <input id="zipCode" type="text"> <span style = "color:red;"id="zipNotFound"></span><br>
                 City:        <span id="city"></span>
                 <br>
                 Latitude:    <span id="latitude"></span>
