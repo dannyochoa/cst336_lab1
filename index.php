@@ -28,6 +28,7 @@
                     dataType: "json",
                     data: { "zip": $("#zipCode").val() },
                     success: function(data,status) {
+                        alert(data.city);
                         if(data == false){
                             $("#zipNotFound").html("Zip code not found");
                         }
@@ -119,9 +120,7 @@
                         $("#wrongpass").hide();
                     }
             
-                
-                    
-                    
+            
                     if(!isPass || !isUser){
                         $("#success").html("<h3 style = 'color: red;'>Error - Cannot sign up </h3>");
                         
