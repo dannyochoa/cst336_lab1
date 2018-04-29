@@ -3,8 +3,10 @@
 <html>
     <head>
         <meta charset="UTF-8">
+          <style>
+            @import url("style.css");</style>
         <title>AJAX: Sign Up Page</title>
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
         <script>
         
@@ -28,7 +30,8 @@
                     dataType: "json",
                     data: { "zip": $("#zipCode").val() },
                     success: function(data,status) {
-                        alert(data.city);
+                        // alert(data.city);
+                        
                         if(data == false){
                             $("#zipNotFound").html("Zip code not found");
                         }
@@ -155,7 +158,8 @@
     </head>
 
     <body>
-    
+        <div id="top"><h1>Cst 336 lab8</h1></div>
+    <div id = "middle">
        <h1> Sign Up Form </h1>
     
         <form onsubmit="return validateForm()">
@@ -163,7 +167,7 @@
                <legend>Sign Up</legend>
                 First Name:  <input id = "firstName" type="text"><br> 
                 Last Name:   <input id = "lastName" type="text"><br> 
-                Email:       <input id = "email" type="text"><br> 
+                Email:       <input id = "email" type="text"><span class="glyphicon glyphicon-envelope"></span><br> 
                 Phone Number:<input id = "number" type="text"><br>
                 Zip Code:    <input id="zipCode" type="text"> <span style = "color:red;"id="zipNotFound"></span><br>
                 City:        <span id="city"></span>
@@ -190,10 +194,11 @@
                 
                 Type Password Again: <input id = "p2" type="password"><span id = 'wrongpass'></span><br>
                 
-                <input id ="sub" type="submit" value="Sign up!">
+                <input class="btn btn-info" id ="sub" type="submit" value="Sign up!">
                 <span id = "success"></span>
             </fieldset>
         </form>
-    
+    </div>
     </body>
+    <footer>Created by: Daniel Ochoa</footer>
 </html>
