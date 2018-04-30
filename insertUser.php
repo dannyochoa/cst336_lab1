@@ -2,7 +2,7 @@
 
 //INSERT INTO `lab8_user` (`userId`, `firstName`, `lastName`, `email`, `username`, `password`, `zipCode`) 
 //VALUES (NULL, 'Gilbert', 'Ochoa', 'gochoa@csumb.edu', 'gochoa', 'dplusg', '93907');
-include '../../dbConnection.php';
+include '../dbConnection.php';
 $conn = connectToDB("lab8");
 
 // $firstName = $_POST['firstName'];
